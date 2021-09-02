@@ -9,6 +9,13 @@ using namespace std;
 
 vector<int> box;
 
+struct comp
+{
+    template<class T>
+    bool operator()(T const &a, T const &b) const { return a > b; }
+};
+
+
 int main(void) {
 	
 	int N = 0;
@@ -21,6 +28,8 @@ int main(void) {
 	} // for
 	
 	sort( box.begin(), box.end() );
+	sort( box.begin(), box.end(), comp());
+	// sort(box.rbegin(), box.rend()); 
 	
 	// box.pop_back()
 	// Delete Last member
